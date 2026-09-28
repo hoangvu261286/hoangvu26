@@ -308,3 +308,84 @@ footer {
         height: 120px;
     }
 }
+
+/* ===== HIỆU ỨNG ĐỘNG - GÓI 3 ===== */
+
+/* Ảnh đại diện nhấp nhô */
+.avatar {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Tiêu đề chính có hiệu ứng gradient chuyển màu */
+.header-text h1 {
+    background: linear-gradient(90deg, #fff, #ffd700, #ff6b9d, #fff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Section title có hiệu ứng gạch chân chạy */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #6C63FF, #ff6b9d, #6C63FF);
+    background-size: 200% 100%;
+    margin: 10px auto 0;
+    animation: gradientShift 3s linear infinite;
+    border-radius: 2px;
+}
+
+/* Các section xuất hiện khi cuộn */
+section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Nút CV nhấp nháy */
+.btn {
+    background: linear-gradient(135deg, #6C63FF 0%, #a78bfa 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(108, 99, 255, 0.6);
+}
+
+/* ===== ĐẢM BẢO NỘI DUNG NỔI LÊN TRÊN PARTICLE ===== */
+body {
+    position: relative;
+    z-index: 1;
+}
+
+nav, section, header, footer {
+    position: relative;
+    z-index: 1;
+}
