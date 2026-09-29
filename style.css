@@ -389,3 +389,15 @@ nav, section, header, footer {
     position: relative;
     z-index: 1;
 }
+/* ===== NGÀY SINH TRONG HERO ===== */
+.birthday {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.birthday i {
+    color: #ffd700;
+    margin-right: 5px;
+}
